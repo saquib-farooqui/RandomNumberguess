@@ -9,7 +9,7 @@ public class HelloWorld
 
         Random random = new Random();
         int randomNumber = random.Next(100);
-       
+        int count = 0;
         
         while (true)
         {
@@ -21,19 +21,24 @@ public class HelloWorld
             {
                 Console.WriteLine("you have exited the application");
                 break;
+               
             }
             else if (userran > randomNumber)
             {
                 Console.WriteLine("High, Try Again");
+                count++;
             }
             else if (userran < randomNumber)
             {
                 Console.WriteLine("Low, Try Again");
+                count++;
             }
             
             else
             {
                 Console.WriteLine($"You guesssed correctly {randomNumber}");
+                Console.WriteLine($"It took you {count} tries");
+                count = 0;
                 randomNumber = random.Next(100);
             }
            
